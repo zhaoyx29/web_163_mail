@@ -64,7 +64,7 @@ class TestIndex:
     def test_check_receive_mail_list(self,init_indexEnv):
         name='进入收件箱页面，查看收件箱列表'
         logger.info("进入收件箱页面，查看收件箱列表")
-        content=IndexPage(init_indexEnv).get_msg_text(name)
+        content=IndexPage(init_indexEnv).get_msg_text()
         #断言
         try:
             assert content == '收件箱'

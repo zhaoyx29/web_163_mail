@@ -9,4 +9,7 @@ from Common.BasePage import BasePage
 from PageLocator.receive_locator import ReceiveLocator
 
 class ReceivePage(ReceiveLocator,BasePage):
-    pass
+    def move_email(self,global_place):
+        name='移动邮件到{0}'.format(global_place)
+        self.wait_eleVisibility(self.move_to_button,model_name=name)
+        self.click_ele(self.move_to_button,model_name=name)

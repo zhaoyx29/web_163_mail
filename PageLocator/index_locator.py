@@ -15,7 +15,6 @@ class IndexLocator:
     receive_email = (By.XPATH,'//div[@id="_mail_component_67_67"]//span[text()="收件箱"]')
     #页面tab--收件箱
     tab_receive_mail = (By.ID,'_mail_tabitem_13_185text')
-
     #【写信】button
     write_email = (By.XPATH,'//*[text()="写 信"]')
     #退出登录button

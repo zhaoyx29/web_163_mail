@@ -8,10 +8,8 @@
 from selenium.webdriver.common.by import By
 
 class WriteEmailLocator:
-    #首页tab
+    #页面tab-首页
     index_tab = (By.XPATH,'//*[text()="首页"]')
-    #草稿箱tab
-    draft_tab = (By.XPATH,'//*[@class="js-component-tabitem tA0 oZ0 nui-tabs-item nui-tabs-item-selected rJ0"]')
     #写信tab
     writeEmail_tab = (By.XPATH,'//*[@class="js-component-tabitem tA0 nui-tabs-item nui-tabs-item-selected rJ0"]')
     #收件人输入框

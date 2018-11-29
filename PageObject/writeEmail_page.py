@@ -20,7 +20,7 @@ class WriteEmailPage(WriteEmailLocator,BasePage):
     #发送文本邮件
     def send_text_Email(self,receive,subject,content):
         name='发送文本信息邮件'
-        logger.info('{0}'.format(name))
+        logger.info(name)
         self.wait_eleVisibility(self.receive_input)
         #步骤
         #输入收件人

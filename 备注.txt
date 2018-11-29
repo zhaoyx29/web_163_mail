@@ -1,0 +1,9 @@
+tab操作和header中的元素操作是否提取出来封装：
+方案一：
+1.tab和header的定位单独封装在一个locator文件中
+2.在PageObject中写一个公共py文件，封装tab和header的操作
+3.各个页面的测试用例中，在需要切换tab和操作header中的元素时，调用公共py文件
+方案二：
+1.tab和header的定位单独封装在一个locator文件中
+2.各个page中，继承tab和header的locator类，添加跳转到每个tab和操作header页面对象的方法（每个page中都需要添加，感觉有点冗余）
+3.各个页面的测试用例中，在需要跳转到每个tab和操作header页面对象时，调用page中的方法

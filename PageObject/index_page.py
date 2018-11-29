@@ -1,6 +1,7 @@
 # -*- coding: utf-8 -*-
 
-from Common.MyLogger import *
+#from Common.MyLogger import *
+from Common.my_log import logger
 from Common.BasePage import BasePage
 from PageLocator.index_locator import IndexLocator
 
@@ -32,5 +33,5 @@ class IndexPage(IndexLocator,BasePage):
 
     def quit_login(self):
         name="退出登录"
-        logging.info(name)
+        logger.info(name)
         self.click_ele(self.quit_button,model_name=name)

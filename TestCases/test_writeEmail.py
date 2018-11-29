@@ -40,4 +40,3 @@ class TestWriteEmail:
         except AssertionError:
             logger.exception('断言出错啦：')
             raise
-

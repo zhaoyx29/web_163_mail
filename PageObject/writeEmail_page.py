@@ -1,19 +1,19 @@
 # -*- coding: utf-8 -*-
 from Common.BasePage import BasePage
-from Common.MyLogger import *
+#from Common.MyLogger import *
+from Common.my_log import logger
 from PageLocator.writeEmail_locator import WriteEmailLocator
-from TestDatas.writeEmail_data import *
 
 class WriteEmailPage(WriteEmailLocator,BasePage):
     def get_tabTitle(self):
         name = '获取写信tab的title'
-        logging.info("获取写信页面的title")
+        logger.info("获取写信页面的title")
         self.wait_eleVisibility(self.writeEmail_tab,model_name=name)
         return self.get_eleAttribute(self.writeEmail_tab,'title',model_name=name)
 
     def send_text_Email(self,receive,subject,content):
         name='发送文本信息邮件'
-        logging.info('{0}'.format(name))
+        logger.info('{0}'.format(name))
         self.wait_eleVisibility(self.receive_input)
         #步骤
         #输入收件人
@@ -29,5 +29,5 @@ class WriteEmailPage(WriteEmailLocator,BasePage):
 
     def get_sendSuccess_msg(self):
         name="获取发送邮件成功的提示信息"
-        logging.info(name)
+        logger.info(name)
         return self.get_text(self.sendEmail_success_msg,model_name=name)

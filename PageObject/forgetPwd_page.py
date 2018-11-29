@@ -2,12 +2,13 @@
 
 from Common.BasePage import BasePage
 from selenium.webdriver.common.by import By
-from Common.MyLogger import *
+#from Common.MyLogger import *
+from Common.my_log import logger
 
 class ForgetPwdPage(BasePage):
 
     def get_forgetUrl(self):
-        logging.info('获取重置密码页面URL')
+        logger.info('获取重置密码页面URL')
         return self.get_pageUrl()
 
 

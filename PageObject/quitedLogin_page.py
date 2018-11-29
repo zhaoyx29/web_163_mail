@@ -5,11 +5,12 @@
 # @File    : quitedLogin_page.py
 # @Software: PyCharm Community Edition
 from Common.BasePage import BasePage
+from Common.my_log import logger
 from PageLocator.quitedLogin_locator import QuitePageLocator
-from Common.MyLogger import *
+#from Common.MyLogger import *
 
 class QuitePage(QuitePageLocator,BasePage):
     def get_quiteSuccess_msg(self):
         name="获取退出成功信息"
-        logging.info(name)
+        logger.info(name)
         return self.get_text(self.quitSuccess_msg,model_name=name)

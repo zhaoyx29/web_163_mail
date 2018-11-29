@@ -9,10 +9,10 @@ from PageObject.index_page import IndexPage
 @pytest.fixture
 def init_loginEnv():
     #启动浏览器静默模式
-    # option = webdriver.ChromeOptions()
-    # option.add_argument('headless')
-    # driver = webdriver.Chrome(chrome_options=option)
-    driver=webdriver.Chrome()
+    option = webdriver.ChromeOptions()
+    option.add_argument('headless')
+    driver = webdriver.Chrome(chrome_options=option)
+    #driver=webdriver.Chrome()
     driver.get(login_url)
     #窗口最大化
     driver.maximize_window()
@@ -24,10 +24,10 @@ def init_loginEnv():
 @pytest.fixture
 def init_indexEnv():
     #启动浏览器静默模式
-    # option = webdriver.ChromeOptions()
-    # option.add_argument('headless')
-    # driver = webdriver.Chrome(chrome_options=option)
-    driver=webdriver.Chrome()
+    option = webdriver.ChromeOptions()
+    option.add_argument('headless')
+    driver = webdriver.Chrome(chrome_options=option)
+    #driver=webdriver.Chrome()
     driver.get(login_url)
     #窗口最大化
     driver.maximize_window()
@@ -40,10 +40,10 @@ def init_indexEnv():
 @pytest.fixture
 def init_writeEnv():
     #启动浏览器静默模式
-    # option = webdriver.ChromeOptions()
-    # option.add_argument('headless')
-    # driver = webdriver.Chrome(chrome_options=option)
-    driver=webdriver.Chrome()
+    option = webdriver.ChromeOptions()
+    option.add_argument('headless')
+    driver = webdriver.Chrome(chrome_options=option)
+    #driver=webdriver.Chrome()
     driver.get(login_url)
     #窗口最大化
     driver.maximize_window()
@@ -52,4 +52,5 @@ def init_writeEnv():
     LoginP.login(login_data['username'],login_data['passwd'])
     IndexPage(driver).go_writeEmail()
     yield driver
-    #driver.quit()
+    driver.quit()
+

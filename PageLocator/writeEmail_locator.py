@@ -1,7 +1,17 @@
 # -*- coding: utf-8 -*-
+# @Time    : 2018/11/10 14:26
+# @Author  :  'zyx'
+# @Email   : 458757014@qq.com
+# @File    : MyLogger.py
+# @Software: PyCharm Community Edition
+
 from selenium.webdriver.common.by import By
 
 class WriteEmailLocator:
+    #首页tab
+    index_tab = (By.XPATH,'//*[text()="首页"]')
+    #草稿箱tab
+    draft_tab = (By.XPATH,'//*[@class="js-component-tabitem tA0 oZ0 nui-tabs-item nui-tabs-item-selected rJ0"]')
     #写信tab
     writeEmail_tab = (By.XPATH,'//*[@class="js-component-tabitem tA0 nui-tabs-item nui-tabs-item-selected rJ0"]')
     #收件人输入框
@@ -22,6 +32,8 @@ class WriteEmailLocator:
     copy_to_input = (By.XPATH,'//div[@class="kZ0 jL0cc"]//*[@class="nui-editableAddr-ipt"]')
     #【存草稿】button
     save_draft_button = (By.XPATH,'//*[text()="存草稿"]')
+    #草稿保存成功提示
+    save_draft_success_msg = (By.XPATH,'//div[@class="js-component-tips nui-frameTips nui-tips nui-tips-suc nui-frameTips-suc  "]//*[@class="nui-tips-text"]')
     #未填写收件人弹窗
     popup_withoutReceive = (By.XPATH,'//div[@class="js-component-tips nui-frameTips nui-tips "]//span[@class="nui-tips-text"]'
     )

@@ -1,4 +1,9 @@
 # -*- coding: utf-8 -*-
+# @Time    : 2018/11/10 14:26
+# @Author  :  'zyx'
+# @Email   : 458757014@qq.com
+# @File    : MyLogger.py
+# @Software: PyCharm Community Edition
 
 #from Common.MyLogger import *
 from Common.my_log import logger
@@ -35,3 +40,9 @@ class IndexPage(IndexLocator,BasePage):
         name="退出登录"
         logger.info(name)
         self.click_ele(self.quit_button,model_name=name)
+
+    def goto_drafts(self):
+        name="进入草稿箱列表"
+        logger.info(name)
+        self.click_ele(self.drafts_menu,model_name=name)
+

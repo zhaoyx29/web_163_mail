@@ -1,4 +1,10 @@
 # -*- coding: utf-8 -*-
+# @Time    : 2018/11/10 14:26
+# @Author  :  'zyx'
+# @Email   : 458757014@qq.com
+# @File    : MyLogger.py
+# @Software: PyCharm Community Edition
+
 # import pytest
 # from Common.MyLogger import *
 # from PageObject.index_page import IndexPage
@@ -54,6 +60,7 @@ from PageObject.quitedLogin_page import QuitePage
 
 @pytest.mark.usefixtures("init_indexEnv")
 class TestIndex:
+    @pytest.mark.smoke
     def test_check_receive_mail_list(self,init_indexEnv):
         name='进入收件箱页面，查看收件箱列表'
         logger.info("进入收件箱页面，查看收件箱列表")
@@ -90,6 +97,8 @@ class TestIndex:
         except AssertionError:
             logger.exception("断言出错啦：")
             raise
+
+
 
 
 

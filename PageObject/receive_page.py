@@ -5,8 +5,8 @@
 # @File    : MyLogger.py
 # @Software: PyCharm Community Edition
 
+from Common.BasePage import BasePage
+from PageLocator.receive_locator import ReceiveLocator
 
-import pytest
-import time
-
-pytest.main(["-m","smoke","--reruns","2","--html=Reports\\{0}_report.html".format(time.strftime("%Y%m%d_%H%M%S"))])
+class ReceivePage(ReceiveLocator,BasePage):
+    pass

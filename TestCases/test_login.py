@@ -1,6 +1,7 @@
 # -*- coding: utf-8 -*-
 import pytest
-from Common.MyLogger import *
+#from Common.MyLogger import *
+from Common.my_log import logger
 from PageObject.index_page import IndexPage
 from TestDatas.login_data import *
 from TestDatas.common_data import *
@@ -16,7 +17,7 @@ class TestLogin:
         try:
             assert IndexPage(init_loginEnv[0]).get_userAccount() == login_success_data['expected']
         except AssertionError:
-            logging.exception('断言失败啦！')
+            logger.exception('断言失败啦！')
             raise
 
     @pytest.mark.parametrize('data',login_noData)
@@ -27,7 +28,7 @@ class TestLogin:
         try:
             assert init_loginEnv[1].get_login_noData_msg() == data['expected']
         except AssertionError:
-            logging.exception('断言失败啦！')
+            logger.exception('断言失败啦！')
             raise
 
     def test_goto_forgetPwdPage(self,init_loginEnv):
@@ -39,7 +40,7 @@ class TestLogin:
             init_loginEnv[1].wait_windows_and_switch_to_it(before_click_handles)   #调用wait_windows_and_switch_to_it方法，切换窗口，# 在测试用例中调用BasePage里的方法，是由页面对象去调用，该页面对象继承了BasePage类
             assert ForgetPwdPage(init_loginEnv[0]).get_forgetUrl() == forget_url
         except AssertionError:
-            logging.exception('断言出错了')
+            logger.exception('断言出错了')
             raise
 
 

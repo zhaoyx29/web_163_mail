@@ -1,0 +1,16 @@
+# -*- coding: utf-8 -*-
+
+from Common.BasePage import BasePage
+from selenium.webdriver.common.by import By
+from Common.MyLogger import *
+
+class ForgetPwdPage(BasePage):
+
+    def get_forgetUrl(self):
+        logging.info('获取重置密码页面URL')
+        return self.get_pageUrl()
+
+
+    def input_email(self):
+        self.wait_eleVisibility((By.XPATH,'//input[@class="ipt_input ipt_input_large ipt_input-success"]'),model_name='等待新窗口中元素可见')
+        self.driver.find_element_by_xpath('//input[@class="ipt_input ipt_input_large ipt_input-success"]').send_keys('12')

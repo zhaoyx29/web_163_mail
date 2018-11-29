@@ -1,0 +1,14 @@
+ Sat, 24 Nov 2018 18:08:24  INFO BasePage.py find_ele [ line:19 ] 查找元素_
+ Sat, 24 Nov 2018 18:08:24  INFO BasePage.py wait_iframe_and_switch_to_it [ line:84 ] 等待并且换到iframe-切换到登录iframe
+ Sat, 24 Nov 2018 18:08:24  INFO BasePage.py wait_eleVisibility [ line:93 ] 等待登录页面-输入用户名密码中元素可见
+ Sat, 24 Nov 2018 18:08:24  INFO BasePage.py find_ele [ line:19 ] 查找元素_
+ Sat, 24 Nov 2018 18:08:24  INFO BasePage.py move_IntoView [ line:103 ] 将登录页面-输入用户名密码的元素移动到可见区域
+ Sat, 24 Nov 2018 18:08:24  INFO BasePage.py find_ele [ line:19 ] 查找元素_登录页面-输入用户名密码
+ Sat, 24 Nov 2018 18:08:24  INFO BasePage.py input_keys [ line:44 ] 登录页面-输入用户名密码-输入文本
+ Sat, 24 Nov 2018 18:08:24  INFO BasePage.py find_ele [ line:19 ] 查找元素_登录页面-输入用户名密码
+ Sat, 24 Nov 2018 18:08:24  INFO BasePage.py input_keys [ line:44 ] 登录页面-输入用户名密码-输入文本
+ Sat, 24 Nov 2018 18:08:24  INFO BasePage.py find_ele [ line:19 ] 查找元素_
+ Sat, 24 Nov 2018 18:08:24  INFO BasePage.py move_IntoView [ line:103 ] 将登录页面-点击登录button的元素移动到可见区域
+ Sat, 24 Nov 2018 18:08:24  INFO BasePage.py find_ele [ line:19 ] 查找元素_
+ Sat, 24 Nov 2018 18:08:24  INFO BasePage.py click_ele [ line:54 ] 登录页面-点击登录button-点击操作
+ Sat, 24 Nov 2018 18:08:25  INFO BasePage.py wait_eleVisibility [ line:93 ] 等待进入写信页面中元素可见

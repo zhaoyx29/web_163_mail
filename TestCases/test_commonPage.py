@@ -22,3 +22,7 @@ class TestCommonPage:
         except AssertionError:
             logger.exception("断言出错啦：")
             raise
+
+    def test_switch_tab(self,init_loginedEnv):
+        CommonPage(init_loginedEnv).swtich_tab('首页')
+        print('测试完成')

@@ -28,7 +28,7 @@ def init_loginEnv():
     driver.quit()
 
 @pytest.fixture
-def init_indexEnv():
+def init_loginedEnv():
     #启动浏览器静默模式
     option = webdriver.ChromeOptions()
     option.add_argument('headless')

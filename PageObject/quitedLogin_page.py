@@ -7,7 +7,7 @@
 from Common.BasePage import BasePage
 from Common.my_log import logger
 from PageLocator.quitedLogin_locator import QuitePageLocator
-#from Common.MyLogger import *
+
 
 class QuitePage(QuitePageLocator,BasePage):
     def get_quiteSuccess_msg(self):

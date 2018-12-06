@@ -17,8 +17,8 @@ class CommonPage(CommonLocator,BasePage):
         self.wait_eleVisibility(self.quit_button)
         self.click_ele(self.quit_button,model_name=name)
 
-    def swtich_tab(self,tab_name):
-        name="切换tab"
+    def switch_tab(self,tab_name):
+        name="切换到{0}tab".format(tab_name)
         logger.info(name)
         locator_dict = vars(CommonLocator)    #获取类的属性，并存为字典
         print(locator_dict)

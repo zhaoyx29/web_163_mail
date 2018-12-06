@@ -34,21 +34,21 @@ class TestCommonPage:
             raise
 
     def test_switch_tab_to_write(self,init_loginedEnv):
-        logger.info( '切换到{0}tab中'.format(address_list_tab))
-        CommonPage(init_loginedEnv).swtich_tab(address_list_tab)
+        logger.info( '切换到{0}tab中'.format(write_tab))
+        CommonPage(init_loginedEnv).swtich_tab(write_tab)
         #断言
         try:
-            assert CommonPage(init_loginedEnv).get_tabTitle(address_list_tab) == '写信'
+            assert CommonPage(init_loginedEnv).get_tabTitle(write_tab) == '写信'
         except AssertionError:
             logger.exception("断言出错啦：")
             raise
 
     def test_switch_tab_to_index(self,init_loginedEnv):
-        logger.info( '切换到{0}tab中'.format(address_list_tab))
-        CommonPage(init_loginedEnv).swtich_tab(address_list_tab)
+        logger.info( '切换到{0}tab中'.format(index_tab))
+        CommonPage(init_loginedEnv).swtich_tab(index_tab)
         #断言
         try:
-            assert CommonPage(init_loginedEnv).get_tabTitle(address_list_tab) == '首页'
+            assert CommonPage(init_loginedEnv).get_tabTitle(index_tab) == '首页'
         except AssertionError:
             logger.exception("断言出错啦：")
             raise

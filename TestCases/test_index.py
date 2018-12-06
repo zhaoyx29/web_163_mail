@@ -64,10 +64,17 @@ class TestIndex:
     def test_tab_name(self,init_loginedEnv):
         name='进入首页页面，查看页面信息是否正确'
         logger.info(name)
+<<<<<<< HEAD
         content=IndexPage(init_loginedEnv).get_tabTitle()
         #断言
         try:
             assert content == index_tab
+=======
+        content=IndexPage(init_loginedEnv).get_tab_text()
+        #断言
+        try:
+            assert content == '首页'
+>>>>>>> e711fc7618ecdbd9d1dd8b2f12b4db6ffe0858aa
         except AssertionError:
             logger.exception('断言出错啦')
             raise

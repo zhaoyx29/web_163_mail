@@ -61,7 +61,11 @@ from selenium.webdriver.common.by import By
 
 import pytest
 from selenium import webdriver
+<<<<<<< HEAD
 from TestDatas.base_data import *
+=======
+from TestDatas.common_data import *
+>>>>>>> e711fc7618ecdbd9d1dd8b2f12b4db6ffe0858aa
 from PageObject.login_page import LoginPage
 from PageObject.index_page import IndexPage
 from Common.BasePage import BasePage
@@ -78,6 +82,7 @@ def swtich_tab(tab_name):
     LoginP=LoginPage(driver)
     LoginP.wait_iframe_and_switch_to_it(LoginP.account_iframe)
     LoginP.login(login_data['username'],login_data['passwd'])
+<<<<<<< HEAD
 
     locator_dict = vars(CommonLocator)    #获取类的属性，并存为字典
     print(locator_dict)
@@ -88,5 +93,22 @@ def swtich_tab(tab_name):
                 BasePage(driver).wait_eleVisibility(i)
                 BasePage(driver).click_ele(i)
 
+=======
+    loc_key = []  #获取属性名，作为key
+    loc_value = []   #获取属性值作为value
+    for i,value in vars(CommonLocator).items():
+        loc_key.append(i)
+        loc_value.append(value)
+    #将key和value组成字典
+    locator=dict(zip(loc_key,loc_value))
+    print(locator)
+    for i in range(len(locator)):
+        #如何遍历字典中的value值
+        if tab_name in locator[i]:
+            BasePage(driver).click_ele(locator[i])
+            print(locator[i][1])
+        else:
+            print(locator[i][0])
+>>>>>>> e711fc7618ecdbd9d1dd8b2f12b4db6ffe0858aa
 
 swtich_tab('首页')

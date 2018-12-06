@@ -19,7 +19,11 @@ class IndexPage(IndexLocator,BasePage):
         self.move_IntoView(self.account_nickname,model_name=name)
         return self.get_text(self.account_nickname,model_name=name)
 
+<<<<<<< HEAD
     def get_tabTitle(self):
+=======
+    def get_tab_text(self):
+>>>>>>> e711fc7618ecdbd9d1dd8b2f12b4db6ffe0858aa
         name='获取当前tab的文本信息'
         self.wait_eleVisibility(self.default_tab,model_name=name)
         self.move_IntoView(self.default_tab,model_name=name)

@@ -20,6 +20,7 @@ class CommonPage(CommonLocator,BasePage):
     def swtich_tab(self,tab_name):
         name="切换tab"
         logger.info(name)
+<<<<<<< HEAD
         locator_dict = vars(CommonLocator)    #获取类的属性，并存为字典
         print(locator_dict)
         #遍历字典中的元素，若为元组，取元组中的第二个定位表达式的值，判断传入参数是否在表达式中，若存在,将该定位表达式传给click_ele()
@@ -36,3 +37,25 @@ class CommonPage(CommonLocator,BasePage):
         locator = tab_name
         self.wait_eleVisibility(locator,model_name=name)
         return self.get_eleAttribute(locator,'title',model_name=name)
+=======
+        locator = []
+        for i,value in vars(CommonLocator).items():
+            locator.append(i)
+        print(locator)
+        if tab_name in locator[1]:
+            self.click_ele(locator[0])
+        else:
+            print(locator)
+
+
+#  2 class Market(object):
+#  3   def __init__(self):
+#  4     self.title = 'apple'
+#  5     self.count = '20'
+#  6   def list_all_member(self):
+#  7     for name,value in vars(self).items():
+#  8       print('%s=%s'%(name,value))
+#  9 if __name__== '__main__':
+# 10   market= Market()
+# 11   market.list_all_member()
+>>>>>>> e711fc7618ecdbd9d1dd8b2f12b4db6ffe0858aa

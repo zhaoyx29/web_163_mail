@@ -8,12 +8,20 @@ import pytest
 from Common.my_log import logger
 from PageObject.common_page import CommonPage
 from PageObject.quitedLogin_page import QuitePage
+<<<<<<< HEAD
 from TestDatas.commonPage_data import *
+=======
+>>>>>>> e711fc7618ecdbd9d1dd8b2f12b4db6ffe0858aa
 
 @pytest.mark.usefixtures("init_loginedEnv")
 class TestCommonPage:
     def test_quit_login(self,init_loginedEnv):
+<<<<<<< HEAD
         logger.info('退出登录')
+=======
+        name = '退出登录'
+        logger.info(name)
+>>>>>>> e711fc7618ecdbd9d1dd8b2f12b4db6ffe0858aa
         #点击退出button
         CommonPage(init_loginedEnv).quit_login()
         #断言
@@ -23,6 +31,7 @@ class TestCommonPage:
             logger.exception("断言出错啦：")
             raise
 
+<<<<<<< HEAD
     def test_switch_tab_to_address_list(self,init_loginedEnv):
         logger.info( '切换到{0}tab中'.format(address_list_tab))
         CommonPage(init_loginedEnv).swtich_tab(address_list_tab)
@@ -53,3 +62,8 @@ class TestCommonPage:
         except AssertionError:
             logger.exception("断言出错啦：")
             raise
+=======
+    def test_switch_tab(self,init_loginedEnv):
+        CommonPage(init_loginedEnv).swtich_tab('首页')
+        print('测试完成')
+>>>>>>> e711fc7618ecdbd9d1dd8b2f12b4db6ffe0858aa

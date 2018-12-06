@@ -23,7 +23,7 @@ class CommonLocator:
     #已发送
     sended_tab = (By.XPATH,'//*[text()="已发送"]')
     #写信tab
-    writeEmail_tab = (By.XPATH,'//*[@class="js-component-tabitem tA0 nui-tabs-item nui-tabs-item-selected rJ0"]')
+    writeEmail_tab = (By.XPATH,'//*[text()="写信"]')
 
 
 

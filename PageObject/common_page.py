@@ -30,7 +30,7 @@ class CommonPage(CommonLocator,BasePage):
                     self.click_ele(i)
 
     def get_tabTitle(self,tab_name):
-        name = '获取页面tab的title'.format(tab_name)
+        name = '{0}获取页面tab的title'.format(tab_name)
         logger.info(name)
         locator_dict = vars(CommonLocator)    #获取类的属性，并存为字典
         print(locator_dict)
@@ -38,7 +38,7 @@ class CommonPage(CommonLocator,BasePage):
         for i in (locator_dict.values()):
             if isinstance(i,tuple):
                 if tab_name in i[1]:
-                    self.wait_eleVisibility(i)
+                    print(i)
                     self.wait_eleVisibility(i,model_name=name)
                     return self.get_text(i,model_name=name)
 

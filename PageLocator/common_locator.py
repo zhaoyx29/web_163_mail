@@ -8,13 +8,22 @@
 from selenium.webdriver.common.by import By
 
 class CommonLocator:
-    #页面tab-首页
-    index_tab = (By.XPATH,'//*[text()="首页"]')
-    #页面tab--收件箱、草稿箱、已发送等菜单中元素定位
-    tab_name = (By.XPATH,'//*[@class="js-component-tabitem tA0 oZ0 nui-tabs-item nui-tabs-item-selected"]//div[@class="nui-tabs-item-text nui-fNoSelect"]')
-    #页面tab--草稿箱
-    draft_tab = (By.XPATH,'//*[@class="js-component-tabitem tA0 oZ0 nui-tabs-item nui-tabs-item-selected rJ0"]')
-    #页面tab--写信
+    #退出登录button
+    quit_button = (By.XPATH,'//a[text()="退出"]')
+    #被选中的tab定位
+    checked_tab = (By.XPATH,'//*[@class="js-component-tabitem tA0 oZ0 nui-tabs-item nui-tabs-item-selected"]//div[@class="nui-tabs-item-text nui-fNoSelect"]')
+    #首页tab
+    unselected_tab = (By.XPATH,'//*[text()="首页"]')
+    #通讯录tab
+    address_list_tab = (By.XPATH,'//*[text()="通讯录"]')
+    #应用中心
+    application_center_tab = (By.XPATH,'//*[text()="应用中心"]')
+    #草稿箱
+    drafts_tab = (By.XPATH,'//*[text()="草稿箱"]')
+    #已发送
+    sended_tab = (By.XPATH,'//*[text()="已发送"]')
+    #写信tab
     writeEmail_tab = (By.XPATH,'//*[@class="js-component-tabitem tA0 nui-tabs-item nui-tabs-item-selected rJ0"]')
-    #页面tab--通讯录
-    address_book_tab = (By.XPATH,'//*[@class="js-component-tabitem tA0 oZ0 nui-tabs-item nui-tabs-item-selected"]//div[@class="nui-tabs-item-text nui-fNoSelect"]')
+
+
+

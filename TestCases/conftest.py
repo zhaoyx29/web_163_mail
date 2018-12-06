@@ -8,7 +8,7 @@
 
 import pytest
 from selenium import webdriver
-from TestDatas.common_data import *
+from TestDatas.base_data import *
 from PageObject.login_page import LoginPage
 from PageObject.index_page import IndexPage
 
@@ -28,7 +28,7 @@ def init_loginEnv():
     driver.quit()
 
 @pytest.fixture
-def init_indexEnv():
+def init_loginedEnv():
     #启动浏览器静默模式
     option = webdriver.ChromeOptions()
     option.add_argument('headless')

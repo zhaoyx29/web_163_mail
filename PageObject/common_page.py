@@ -6,8 +6,33 @@
 # @Software: PyCharm Community Edition
 
 from Common.BasePage import BasePage
+from Common.my_log import logger
 from PageLocator.common_locator import CommonLocator
 
 class CommonPage(CommonLocator,BasePage):
-    def switch_to_tab(self):
-        pass
+    #退出登录
+    def quit_login(self):
+        name="退出登录"
+        logger.info(name)
+        self.wait_eleVisibility(self.quit_button)
+        self.click_ele(self.quit_button,model_name=name)
+
+    def swtich_tab(self,tab_name):
+        name="切换tab"
+        logger.info(name)
+        locator_dict = vars(CommonLocator)    #获取类的属性，并存为字典
+        print(locator_dict)
+        #遍历字典中的元素，若为元组，取元组中的第二个定位表达式的值，判断传入参数是否在表达式中，若存在,将该定位表达式传给click_ele()
+        for i in (locator_dict.values()):
+            if isinstance(i,tuple):
+                if tab_name in i[1]:
+                    self.wait_eleVisibility(i)
+                    self.click_ele(i)
+
+    def get_tabTitle(self,tab_name):
+     #   return self.get_text(self.address_list_tab)
+        name = '获取页面tab的title'
+        logger.info("获取页面tab的title")
+        locator = tab_name
+        self.wait_eleVisibility(locator,model_name=name)
+        return self.get_eleAttribute(locator,'title',model_name=name)

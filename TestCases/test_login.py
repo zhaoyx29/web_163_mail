@@ -10,7 +10,7 @@ import pytest
 from Common.my_log import logger
 from PageObject.index_page import IndexPage
 from TestDatas.login_data import *
-from TestDatas.common_data import *
+from TestDatas.base_data import *
 from PageObject.forgetPwd_page import ForgetPwdPage
 
 @pytest.mark.usefixtures("init_loginEnv")

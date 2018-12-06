@@ -9,4 +9,5 @@ from Common.BasePage import BasePage
 from PageLocator.common_locator import CommonLocator
 
 class CommonPage(CommonLocator,BasePage):
-    pass
+    def switch_to_tab(self):
+        pass

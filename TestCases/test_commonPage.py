@@ -32,14 +32,3 @@ class TestCommonPage:
     #     except AssertionError:
     #         logger.exception("断言出错啦：")
     #         raise
-
-    @pytest.mark.parametrize('data',switch_tab_data)
-    def test_switch_tab(self,init_loginedEnv,data):
-        logger.info( '切换到{0}tab中'.format(data['tab_name']))
-        CommonPage(init_loginedEnv).switch_tab(data['tab_name'])
-        #断言
-        try:
-            assert CommonPage(init_loginedEnv).get_tabTitle(data['tab_name']) == data['expected']
-        except AssertionError:
-            logger.exception("断言出错啦：")
-            raise

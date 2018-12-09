@@ -7,3 +7,4 @@
 
 index_tab = '首页'
 write_tab = '写信'
+draft_tab = '草稿箱'

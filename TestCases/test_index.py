@@ -64,10 +64,8 @@ class TestIndex:
         logger.info(name)
         #点击【写信】操作
         IndexPage(init_loginedEnv).goto_writeEmail()
-        print('进入写信页面啦')
         #比对当前是否在写信页面（tab）  当前title为：写信
         tab_title = CommonPage(init_loginedEnv).get_write_tabTitle()
-        print(tab_title)
         #断言
         try:
             assert tab_title == write_tab
@@ -75,6 +73,22 @@ class TestIndex:
             logger.exception('断言出错啦')
             raise
 
+    def test_goto_draft(self,init_loginedEnv):
+        name = '进入草稿箱页面'
+        logger.info(name)
+        #点击【写信】操作
+        IndexPage(init_loginedEnv).goto_drafts()
+        #比对当前是否在草稿箱页面（tab）  当前title为：草稿箱
+        tab_title = CommonPage(init_loginedEnv).get_current_tab()
+        #断言
+        try:
+            assert tab_title == draft_tab
+        except AssertionError:
+            logger.exception('断言出错啦')
+            raise
+
+    def test_goto_sended(self,init_loginedEnv):
+        pass
 
 
 

@@ -28,22 +28,13 @@ class CommonPage(CommonLocator,BasePage):
                 if tab_name in i[1]:
                     self.wait_eleVisibility(i)
                     self.click_ele(i)
-        # for i in (locator_dict.values()):
-        #     if isinstance(i,tuple):
-        #         if tab_name in i[1]:
-        #             self.wait_eleVisibility(i)
-        #             self.click_ele(i)
 
-    def get_tabTitle(self,tab_name):
-        name = '获取{0}页面tab的title'.format(tab_name)
+    #获取当前所在tab的title----除了特例：写信tab外，写信tab定位表达式和其余tab不一样
+    def get_current_tab(self):
+        name = '获取当前页面tab的title'
         logger.info(name)
-        locator_dict = vars(CommonLocator)    #获取类的属性，并存为字典
-        #遍历字典中的元素，若键名中包含字符串'tab',且该键的值为元组，则取元组中的第二个定位表达式的值，判断传入参数是否在表达式中，若存在,将该定位表达式传给click_ele()
-        for k,i in (locator_dict.items()):
-            if 'tab' in k and isinstance(i,tuple):
-                if tab_name in i[1]:
-                    self.wait_eleVisibility(i)
-                    self.get_text(i)
+        self.wait_eleVisibility(self.checked_tab)
+        return self.get_text(self.checked_tab)
 
     def get_write_tabTitle(self):
         name='获取当前tab的文本信息'

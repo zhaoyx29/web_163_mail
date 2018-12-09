@@ -37,3 +37,8 @@ class IndexPage(IndexLocator,BasePage):
         self.wait_eleVisibility(self.drafts_menu,model_name=name)
         self.click_ele(self.drafts_menu,model_name=name)
 
+    def goto_sended(self):
+        name = "进入已发送列表"
+        logger.info(name)
+        self.wait_eleVisibility(self.sended_menu,model_name=name)
+        self.click_ele(self.sended_menu,model_name=name)

@@ -87,8 +87,9 @@ class TestIndex:
             logger.exception('断言出错啦')
             raise
 
-    def test_goto_sended(self,init_loginedEnv):
-        pass
+    # def test_goto_sended(self,init_loginedEnv):
+    #     name = '进入已发送页面'
+    #     logger.info(name)
 
 
 

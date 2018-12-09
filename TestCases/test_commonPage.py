@@ -32,26 +32,6 @@ class TestCommonPage:
     #     except AssertionError:
     #         logger.exception("断言出错啦：")
     #         raise
-    #
-    # def test_switch_tab_to_write(self,init_loginedEnv):
-    #     logger.info( '切换到{0}tab中'.format(write_tab))
-    #     CommonPage(init_loginedEnv).switch_tab(write_tab)
-    #     #断言
-    #     try:
-    #         assert CommonPage(init_loginedEnv).get_tabTitle(write_tab) == '写信'
-    #     except AssertionError:
-    #         logger.exception("断言出错啦：")
-    #         raise
-    #
-    # def test_switch_tab_to_index(self,init_loginedEnv):
-    #     logger.info( '切换到{0}tab中'.format(index_tab))
-    #     CommonPage(init_loginedEnv).switch_tab(index_tab)
-    #     #断言
-    #     try:
-    #         assert CommonPage(init_loginedEnv).get_tabTitle(index_tab) == '首页'
-    #     except AssertionError:
-    #         logger.exception("断言出错啦：")
-    #         raise
 
     @pytest.mark.parametrize('data',switch_tab_data)
     def test_switch_tab(self,init_loginedEnv,data):

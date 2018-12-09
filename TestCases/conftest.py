@@ -56,7 +56,7 @@ def init_writeEnv():
     LoginP=LoginPage(driver)
     LoginP.wait_iframe_and_switch_to_it(LoginP.account_iframe)
     LoginP.login(login_data['username'],login_data['passwd'])
-    IndexPage(driver).go_writeEmail()
+    IndexPage(driver).goto_writeEmail()
     yield driver
     driver.quit()
 

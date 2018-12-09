@@ -10,18 +10,18 @@ from selenium.webdriver.support import expected_conditions as EC
 from selenium.webdriver.support.wait import WebDriverWait
 from selenium.webdriver.common.by import By
 
-# driver=webdriver.Chrome()
-# driver.get("https://mail.163.com/")
-#
-# # ele=driver.find_element_by_xpath('//*[contains(@id,"x-URS-iframe")]')
-# # WebDriverWait(driver,20).until(EC.frame_to_be_available_and_switch_to_it(ele))
-#
-# #切换到登录iframe弹窗
-# WebDriverWait(driver,10).until(EC.visibility_of_element_located((By.XPATH,'//*[contains(@id,"x-URS-iframe")]')))
-# driver.switch_to.frame(driver.find_element_by_xpath('//*[contains(@id,"x-URS-iframe")]'))   #通过webdriver对象切换
-# #输入用户名密码
-# driver.find_element_by_xpath('//input[@name="email"]').send_keys('zhaotester')
-# driver.find_element_by_xpath('//input[@name="password"]').send_keys('yx.920929')
+driver=webdriver.Chrome()
+driver.get("https://mail.163.com/")
+
+# ele=driver.find_element_by_xpath('//*[contains(@id,"x-URS-iframe")]')
+# WebDriverWait(driver,20).until(EC.frame_to_be_available_and_switch_to_it(ele))
+
+#切换到登录iframe弹窗
+WebDriverWait(driver,10).until(EC.visibility_of_element_located((By.XPATH,'//*[contains(@id,"x-URS-iframe")]')))
+driver.switch_to.frame(driver.find_element_by_xpath('//*[contains(@id,"x-URS-iframe")]'))   #通过webdriver对象切换
+#输入用户名密码
+driver.find_element_by_xpath('//input[@name="email"]').send_keys('zhaotester')
+driver.find_element_by_xpath('//input[@name="password"]').send_keys('yx.920929')
 # #窗口切换
 # # cur_handles1=driver.window_handles
 # # print('cur_handles1:',cur_handles1)
@@ -34,16 +34,16 @@ from selenium.webdriver.common.by import By
 # # driver.switch_to.window(cur_handles[-1])
 # # driver.find_element_by_xpath('//input[@class="ipt_input ipt_input_large ipt_input-success"]').send_keys('12')
 #
-# #点击登录
-# driver.find_element_by_id('dologin').click()
+#点击登录
+driver.find_element_by_id('dologin').click()
 #
 # # WebDriverWait(driver,15).until(EC.visibility_of_element_located((By.XPATH,'//span[contains(@id,"dvGreetName")]')))
 # # a=driver.find_element_by_xpath('//span[contains(@id,"dvGreetName")]').text
-#
-# #登录以后点击【写信】
-# locator='//*[text()="写 信"]'
-# WebDriverWait(driver,15).until(EC.visibility_of_element_located((By.XPATH,'//*[text()="写 信"]')))
-# driver.find_element_by_xpath('//*[text()="写 信"]').click()
+
+#登录以后点击【写信】
+#locator='//*[text()="写 信"]'
+WebDriverWait(driver,15).until(EC.visibility_of_element_located((By.XPATH,'//*[text()="写 信"]')))
+driver.find_element_by_xpath('//*[text()="写 信"]').click()
 #
 # #切换到文本输入框iframe，输入发送的内容
 # ele = driver.find_element_by_xpath('//*[@class="APP-editor-iframe"]')
@@ -59,35 +59,36 @@ from selenium.webdriver.common.by import By
 #
 
 
-import pytest
-from selenium import webdriver
-from TestDatas.base_data import *
-from TestDatas.base_data import *
-from PageObject.login_page import LoginPage
-from PageObject.index_page import IndexPage
-from Common.BasePage import BasePage
-from PageLocator.common_locator import *
-def swtich_tab(tab_name):
-    #启动浏览器静默模式
-    option = webdriver.ChromeOptions()
-    option.add_argument('headless')
-    driver = webdriver.Chrome(chrome_options=option)
-    #driver=webdriver.Chrome()
-    driver.get(login_url)
-    #窗口最大化
-    driver.maximize_window()
-    LoginP=LoginPage(driver)
-    LoginP.wait_iframe_and_switch_to_it(LoginP.account_iframe)
-    LoginP.login(login_data['username'],login_data['passwd'])
-
-    locator_dict = vars(CommonLocator)    #获取类的属性，并存为字典
-    print(locator_dict)
-    #遍历字典中的元素，若为元组，取元组中的第二个定位表达式的值，判断传入参数是否在表达式中，若存在,将该定位表达式传给click_ele()
-    for i in (locator_dict.values()):
-        if isinstance(i,tuple):
-            if tab_name in i[1]:
-                BasePage(driver).wait_eleVisibility(i)
-                BasePage(driver).click_ele(i)
-
-
-swtich_tab('首页')
+# import pytest
+# from selenium import webdriver
+# from TestDatas.base_data import *
+# from TestDatas.base_data import *
+# from PageObject.login_page import LoginPage
+# from PageObject.index_page import IndexPage
+# from Common.BasePage import BasePage
+# from PageLocator.common_locator import *
+# def swtich_tab(tab_name):
+#     #启动浏览器静默模式
+#     option = webdriver.ChromeOptions()
+#     option.add_argument('headless')
+#     driver = webdriver.Chrome(chrome_options=option)
+#     #driver=webdriver.Chrome()
+#     driver.get(login_url)
+#     #窗口最大化
+#     driver.maximize_window()
+#     LoginP=LoginPage(driver)
+#     LoginP.wait_iframe_and_switch_to_it(LoginP.account_iframe)
+#     LoginP.login(login_data['username'],login_data['passwd'])
+#
+#     locator_dict = vars(CommonLocator)    #获取类的属性，并存为字典
+#     #print(locator_dict.items())
+#     #print(locator_dict)
+#     #遍历字典中的元素，若为元组，取元组中的第二个定位表达式的值，判断传入参数是否在表达式中，若存在,将该定位表达式传给click_ele()
+#     for k,i in (locator_dict.items()):
+#         if 'tab' in k and isinstance(i,tuple):
+#             if tab_name in i[1]:
+#                 BasePage(driver).wait_eleVisibility(i)
+#                 BasePage(driver).click_ele(i)
+#
+#
+# swtich_tab('首页')

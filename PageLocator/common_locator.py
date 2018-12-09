@@ -23,7 +23,7 @@ class CommonLocator:
     #已发送
     sended_tab = (By.XPATH,'//*[text()="已发送"]')
     #写信tab
-    writeEmail_tab = (By.XPATH,'//*[text()="写信"]')
+    writeEmail_tab = (By.XPATH,'//*[@class="js-component-icon nui-ico nui-ico-compose  "]/parent::div[contains(@id,"_mail_tabitem")]/parent::li')
 
 
 

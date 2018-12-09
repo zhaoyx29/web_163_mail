@@ -1,0 +1,28 @@
+ Sun, 09 Dec 2018 15:05:04  INFO BasePage.py find_ele [ line:26 ] 查找元素_
+ Sun, 09 Dec 2018 15:05:04  INFO BasePage.py wait_iframe_and_switch_to_it [ line:91 ] 等待并且换到iframe-
+ Sun, 09 Dec 2018 15:05:04  INFO BasePage.py wait_eleVisibility [ line:100 ] 等待登录页面-输入用户名密码中元素可见
+ Sun, 09 Dec 2018 15:05:04  INFO BasePage.py find_ele [ line:26 ] 查找元素_
+ Sun, 09 Dec 2018 15:05:04  INFO BasePage.py move_IntoView [ line:110 ] 将登录页面-输入用户名密码的元素移动到可见区域
+ Sun, 09 Dec 2018 15:05:04  INFO BasePage.py find_ele [ line:26 ] 查找元素_登录页面-输入用户名密码
+ Sun, 09 Dec 2018 15:05:04  INFO BasePage.py input_keys [ line:51 ] 登录页面-输入用户名密码-输入文本
+ Sun, 09 Dec 2018 15:05:04  INFO BasePage.py find_ele [ line:26 ] 查找元素_登录页面-输入用户名密码
+ Sun, 09 Dec 2018 15:05:04  INFO BasePage.py input_keys [ line:51 ] 登录页面-输入用户名密码-输入文本
+ Sun, 09 Dec 2018 15:05:04  INFO BasePage.py find_ele [ line:26 ] 查找元素_
+ Sun, 09 Dec 2018 15:05:04  INFO BasePage.py move_IntoView [ line:110 ] 将登录页面-点击登录button的元素移动到可见区域
+ Sun, 09 Dec 2018 15:05:04  INFO BasePage.py find_ele [ line:26 ] 查找元素_
+ Sun, 09 Dec 2018 15:05:04  INFO BasePage.py click_ele [ line:61 ] 登录页面-点击登录button-点击操作
+ Sun, 09 Dec 2018 15:05:04  INFO test_index.py test_goto_writeEmail [ line:64 ] 进入写信页面
+ Sun, 09 Dec 2018 15:05:04  INFO BasePage.py wait_eleVisibility [ line:100 ] 等待进入写信页面中元素可见
+ Sun, 09 Dec 2018 15:05:06  INFO BasePage.py find_ele [ line:26 ] 查找元素_
+ Sun, 09 Dec 2018 15:05:06  INFO BasePage.py move_IntoView [ line:110 ] 将进入写信页面的元素移动到可见区域
+ Sun, 09 Dec 2018 15:05:06  INFO BasePage.py find_ele [ line:26 ] 查找元素_
+ Sun, 09 Dec 2018 15:05:06  INFO BasePage.py click_ele [ line:61 ] 进入写信页面-点击操作
+ Sun, 09 Dec 2018 15:05:06  INFO common_page.py get_tabTitle [ line:39 ] 写信获取页面tab的title
+ Sun, 09 Dec 2018 15:05:06  INFO BasePage.py wait_eleVisibility [ line:100 ] 等待中元素可见
+ Sun, 09 Dec 2018 15:05:06  INFO BasePage.py find_ele [ line:26 ] 查找元素_
+ Sun, 09 Dec 2018 15:05:06  INFO BasePage.py get_text [ line:121 ] 获取文本信息
+ Sun, 09 Dec 2018 15:05:06  ERROR test_index.py test_goto_writeEmail [ line:75 ] 断言出错啦
+Traceback (most recent call last):
+  File "D:\TestScript\web_163_mail\TestCases\test_index.py", line 73, in test_goto_writeEmail
+    assert tab_title == write_tab
+AssertionError: assert None == '写信'

@@ -22,23 +22,33 @@ class CommonPage(CommonLocator,BasePage):
         logger.info(name)
         locator_dict = vars(CommonLocator)    #获取类的属性，并存为字典
         print(locator_dict)
-        #遍历字典中的元素，若为元组，取元组中的第二个定位表达式的值，判断传入参数是否在表达式中，若存在,将该定位表达式传给click_ele()
-        for i in (locator_dict.values()):
-            if isinstance(i,tuple):
+        #遍历字典中的元素，若键名中包含字符串'tab',且该键的值为元组，则取元组中的第二个定位表达式的值，判断传入参数是否在表达式中，若存在,将该定位表达式传给click_ele()
+        for k,i in (locator_dict.items()):
+            if 'tab' in k and isinstance(i,tuple):
                 if tab_name in i[1]:
                     self.wait_eleVisibility(i)
                     self.click_ele(i)
+        # for i in (locator_dict.values()):
+        #     if isinstance(i,tuple):
+        #         if tab_name in i[1]:
+        #             self.wait_eleVisibility(i)
+        #             self.click_ele(i)
 
     def get_tabTitle(self,tab_name):
-        name = '{0}获取页面tab的title'.format(tab_name)
+        name = '获取{0}页面tab的title'.format(tab_name)
         logger.info(name)
         locator_dict = vars(CommonLocator)    #获取类的属性，并存为字典
-        print(locator_dict)
-        #遍历字典中的元素，若为元组，取元组中的第二个定位表达式的值，判断传入参数是否在表达式中，若存在,将该定位表达式传给click_ele()
-        for i in (locator_dict.values()):
-            if isinstance(i,tuple):
+        #遍历字典中的元素，若键名中包含字符串'tab',且该键的值为元组，则取元组中的第二个定位表达式的值，判断传入参数是否在表达式中，若存在,将该定位表达式传给click_ele()
+        for k,i in (locator_dict.items()):
+            if 'tab' in k and isinstance(i,tuple):
                 if tab_name in i[1]:
-                    print(i)
-                    self.wait_eleVisibility(i,model_name=name)
-                    return self.get_text(i,model_name=name)
+                    self.wait_eleVisibility(i)
+                    self.get_text(i)
+
+    def get_write_tabTitle(self):
+        name='获取当前tab的文本信息'
+        self.wait_eleVisibility(self.writeEmail_tab,model_name=name)
+        self.move_IntoView(self.writeEmail_tab,model_name=name)
+        return self.get_eleAttribute(self.writeEmail_tab,'title',model_name=name)
+
 

@@ -18,4 +18,4 @@ class IndexLocator:
     #【写信】button
     write_email = (By.XPATH,'//*[text()="写 信"]')
     #菜单栏中，草稿箱菜单定位
-    drafts_menu = (By.XPATH,'//div[@class="js-component-component nui-tree-item-label"]//*[text()="草稿箱"]')
+    drafts_menu = (By.XPATH,'//*[contains(@id,"_mail_component")]/*[text()="草稿箱"]')

@@ -1,0 +1,28 @@
+ Sun, 09 Dec 2018 15:01:39  INFO BasePage.py find_ele [ line:26 ] 查找元素_
+ Sun, 09 Dec 2018 15:01:39  INFO BasePage.py wait_iframe_and_switch_to_it [ line:91 ] 等待并且换到iframe-
+ Sun, 09 Dec 2018 15:01:39  INFO BasePage.py wait_eleVisibility [ line:100 ] 等待登录页面-输入用户名密码中元素可见
+ Sun, 09 Dec 2018 15:01:39  INFO BasePage.py find_ele [ line:26 ] 查找元素_
+ Sun, 09 Dec 2018 15:01:39  INFO BasePage.py move_IntoView [ line:110 ] 将登录页面-输入用户名密码的元素移动到可见区域
+ Sun, 09 Dec 2018 15:01:39  INFO BasePage.py find_ele [ line:26 ] 查找元素_登录页面-输入用户名密码
+ Sun, 09 Dec 2018 15:01:39  INFO BasePage.py input_keys [ line:51 ] 登录页面-输入用户名密码-输入文本
+ Sun, 09 Dec 2018 15:01:39  INFO BasePage.py find_ele [ line:26 ] 查找元素_登录页面-输入用户名密码
+ Sun, 09 Dec 2018 15:01:39  INFO BasePage.py input_keys [ line:51 ] 登录页面-输入用户名密码-输入文本
+ Sun, 09 Dec 2018 15:01:39  INFO BasePage.py find_ele [ line:26 ] 查找元素_
+ Sun, 09 Dec 2018 15:01:39  INFO BasePage.py move_IntoView [ line:110 ] 将登录页面-点击登录button的元素移动到可见区域
+ Sun, 09 Dec 2018 15:01:39  INFO BasePage.py find_ele [ line:26 ] 查找元素_
+ Sun, 09 Dec 2018 15:01:39  INFO BasePage.py click_ele [ line:61 ] 登录页面-点击登录button-点击操作
+ Sun, 09 Dec 2018 15:01:39  INFO test_index.py test_goto_writeEmail [ line:64 ] 进入写信页面
+ Sun, 09 Dec 2018 15:01:39  INFO BasePage.py wait_eleVisibility [ line:100 ] 等待进入写信页面中元素可见
+ Sun, 09 Dec 2018 15:01:42  INFO BasePage.py find_ele [ line:26 ] 查找元素_
+ Sun, 09 Dec 2018 15:01:42  INFO BasePage.py move_IntoView [ line:110 ] 将进入写信页面的元素移动到可见区域
+ Sun, 09 Dec 2018 15:01:42  INFO BasePage.py find_ele [ line:26 ] 查找元素_
+ Sun, 09 Dec 2018 15:01:42  INFO BasePage.py click_ele [ line:61 ] 进入写信页面-点击操作
+ Sun, 09 Dec 2018 15:01:42  INFO BasePage.py wait_eleVisibility [ line:100 ] 等待获取当前tab的文本信息中元素可见
+ Sun, 09 Dec 2018 15:02:02  ERROR BasePage.py wait_eleVisibility [ line:103 ] 等待元素可见失败
+Traceback (most recent call last):
+  File "D:\TestScript\web_163_mail\Common\BasePage.py", line 101, in wait_eleVisibility
+    WebDriverWait(self.driver,wait_time,poll_frequency).until(EC.visibility_of_element_located(locator))
+  File "D:\soft\Python3\lib\site-packages\selenium\webdriver\support\wait.py", line 80, in until
+    raise TimeoutException(message, screen, stacktrace)
+selenium.common.exceptions.TimeoutException: Message: 
+

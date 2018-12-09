@@ -63,10 +63,10 @@ class TestIndex:
         name = '进入写信页面'
         logger.info(name)
         #点击【写信】操作
-        IndexPage(init_loginedEnv).go_writeEmail()
-        time.sleep(3)
+        IndexPage(init_loginedEnv).goto_writeEmail()
+        print('进入写信页面啦')
         #比对当前是否在写信页面（tab）  当前title为：写信
-        tab_title = CommonPage(init_loginedEnv).get_tabTitle(write_tab)
+        tab_title = CommonPage(init_loginedEnv).get_write_tabTitle()
         print(tab_title)
         #断言
         try:
@@ -74,6 +74,7 @@ class TestIndex:
         except AssertionError:
             logger.exception('断言出错啦')
             raise
+
 
 
 
